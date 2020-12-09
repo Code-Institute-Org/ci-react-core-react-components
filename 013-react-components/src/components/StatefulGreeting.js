@@ -4,23 +4,24 @@ export default class StatefulGreeting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: new Date(),
-      nameColor: "red"
+      count: 0
     };
+  }
+
+  setCount = () => {
+    this.setState(prevState => {
+      return { count: prevState.count + 1 }
+    })
   }
 
   render() {
     return (
       <div className="greeting">
         <h1>
-          Hello
-          <span style={{ color: this.state.nameColor }}>
-            {" "}
-            {this.props.name}
-          </span>
-          , I'm a stateful component!
+          Hello, {this.props.name}, I'm a stateful component!
         </h1>
-        <h2>It is currently {this.state.date.toLocaleTimeString()}</h2>
+        <h2>You've clicked {this.state.count} times</h2>
+        <button onClick={this.setCount}>Increment Count</button>
       </div>
     );
   }

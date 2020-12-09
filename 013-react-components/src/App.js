@@ -7,10 +7,8 @@ function App() {
   return (
     <div className="App">
       <FunctionalGreeting name="John" />
-      <hr />
-      <StatefulGreeting name="Anna" />
-      <hr />
-      <HooksCounter />
+      {/* <StatefulGreeting name="Anna" /> */}
+      {/* <HooksCounter name="Mike" /> */}
     </div>
   );
 }

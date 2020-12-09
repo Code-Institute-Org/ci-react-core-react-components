@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function HooksCounter() {
+export default function HooksCounter(props) {
   // count: a new state property
   // setCount: a method to update count
   // useState(0): initialize count to 0
@@ -8,7 +8,7 @@ export default function HooksCounter() {
 
   return (
     <div className="greeting">
-      <h1>Hello! I'm a functional component with hooks!</h1>
+      <h1>Hello {props.name}! I'm a functional component with hooks!</h1>
       <h2>You clicked {count} times</h2>
       <button onClick={() => setCount(count + 1)}>Increment Counter</button>
     </div>
